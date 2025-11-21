@@ -1,0 +1,259 @@
+ :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #6366f1;
+            --accent-color: #8b5cf6;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --card-bg: #f8fafc;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .changelog-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .changelog-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .changelog-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .changelog-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+
+        .changelog-content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .changelog-list {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .changelog-list::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .changelog-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .changelog-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .date-container {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .date-bubble {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 3;
+        }
+
+        .date-month {
+            font-size: 0.7rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .date-day {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .changelog-details {
+            flex: 1;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .changelog-details:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .changelog-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .changelog-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .changelog-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .changelog-header {
+                padding: 1.5rem;
+            }
+            
+            .changelog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .changelog-content {
+                padding: 1.5rem;
+            }
+            
+            .changelog-list::before {
+                left: 25px;
+            }
+            
+            .date-container {
+                width: 50px;
+                margin-right: 1rem;
+            }
+            
+            .date-bubble {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .date-day {
+                font-size: 1rem;
+            }
+            
+            .date-month {
+                font-size: 0.6rem;
+            }
+            
+            .changelog-details {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .changelog-item {
+                flex-direction: column;
+            }
+            
+            .date-container {
+                flex-direction: row;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1rem;
+                justify-content: flex-start;
+            }
+            
+            .date-bubble {
+                margin-right: 1rem;
+            }
+            
+            .changelog-list::before {
+                left: 25px;
+                height: calc(100% - 60px);
+                top: 60px;
+            }
+        }
